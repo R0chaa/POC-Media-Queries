@@ -1,0 +1,101 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.columns p {
+    column-count: 1;
+    column-gap: 1rem;
+    padding: 1rem;
+}
+
+/* Media Query para Impressão */
+@media print {
+    body {
+        font-size: 12pt;
+        color: black;
+    }
+
+    .menu, .gallery {
+        display: none;
+    }
+}
+
+/* Media Queries para diferentes larguras de dispositivo */
+@media (max-width: 600px) {
+    /* Smartphone */
+    .gallery .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .columns p {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    /* Tablet */
+    .gallery .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .columns p {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop */
+    .gallery .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .columns p {
+        column-count: 3;
+    }
+}
+
+/* Media Queries para disposição landscape e portrait */
+@media screen and (orientation: landscape) {
+    body {
+        background-color: #f0f0f0;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    body {
+        background-color: #e0e0e0;
+    }
+}
